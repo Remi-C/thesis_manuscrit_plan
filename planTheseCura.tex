@@ -1,0 +1,71 @@
+%% ---------------------------------------------------------------------
+%% Copyright 2015, Thales, IGN, Rémi Cura
+%% 
+%% This file describes the plan for the thesis manuscript
+%% ---------------------------------------------------------------------
+ 
+\documentclass{article}
+\begin{document}
+ 
+ 
+ % short plan
+ \begin{enumerate}
+ \item Introduction : what context , problem, goal , stucture of manuscript
+ 	 \begin{enumerate}
+ 	 	\item context : more city, bigger, more difficult to manage
+ 	 	\item problem : need tools to manage city
+ 	 	\item goal : automatic tools to create/update city model
+ 	 	\item structure of thesis : 
+ 	 		tools will be based on reality, aka sensing, which need management.
+ 	 		We need a way to model city.
+			We need a way to ensure modeling is coherent with sensing
+ 	 \end{enumerate}
+ 	 
+ \item Chapter 1 : Dealing with sensing : Point Cloud Server
+ 	 \begin{enumerate} 
+  	 	\item what is sensing : introduction to point clouds
+  	 	\item Introduction : context : more sensing, problem : volume, messy , goal : easy management, higher level information extraction. structure : state of the art, concept, loading, storing, filtering, outputing, processing
+  	 	\item Short State of the art (small extension of paper)
+  	 	\item Concept of Using RDBMS to manage point cloud
+  	 	\item Basic operations
+  	 	\begin{enumerate} 
+  	 		\item loading
+		  	 \item storing
+		  	 \item filtering
+		  	 \item exporting	
+  	 	\end{enumerate}
+  	 	\item processing
+  	 		\begin{enumerate} 
+  	 	  	 	\item LOD
+  	 			\item extracting information	
+  	 	  	\end{enumerate}
+  	 	\item conclusion
+  	 		The system manages huge sensing, and extract higher level oberservations suitable for city modeling. However, information too noisy and un-reliable to adopt reconstruction strategy. Better perform inverse procedural modeling --> Need procedural modeling.
+  	 \end{enumerate}
+  	 
+ \item Chapter 2 : Generating Street : StreetGen
+ 	\begin{enumerate}
+ 	\item Introduction (procedural generation, tradeoff between model expressibility/complexity? Problem : diversity of streets. Solution : good first guess, editable, + natively easily extensible data model)
+ 	\item State of the art (only focused on road modelling, short (about 20 papers))
+ 	\item modelling streets (explaining the arc/line model , and how to compute it)
+ 	\item modelling a city : explains the choice of RDBMS use (scaling), and the general structure of the datamodel (topo network + results)
+ 	\item interactive changes (why, how, proof of usefulness)
+ 	\end{enumerate}
+ 	
+ \item Chapter 3 : adapting model to sensing : Optimisation
+ 	\begin{enumerate}
+ 	\item Introduction : context : if successful, extraordinary powerful, but increadibely difficult. Boils down to Inverse procedural modeling, a pervasive problem, but a newly formulated one. Solution : wide state of the art, solution with known methods, perspective with un-tested methods
+ 	\item State of the Art : massive
+ 	\item Solving a simplified problem with a tried and tested solution : optimisation of a non linear least square problem
+ 	\item Proposition to solve the full problem (hypergraph matching)
+ 	\item conclusion : basic optimisation works, but won't suffice for complex version of the problem (aka with more than a few parameters). Still works to do for Inverse Procedural Modeling
+ 	\end{enumerate}
+ 	
+ \item Conclusion : what ought to be improved
+ \item Perspective
+ \end{enumerate}
+
+\end{document}
+
+
+
